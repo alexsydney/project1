@@ -50,11 +50,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+#use for Heroku production server for live app
 gem 'rails_12factor', group: :production
-
+# use for debugger
 gem 'pry-rails'
-
 gem 'annotate'
-
 gem 'jquery-rails'
