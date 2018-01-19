@@ -1,0 +1,10 @@
+<h2> <em><%= @user.first_name %> <%= @user.last_name %></em> </h2>
+
+<%= link_to 'Edit', "/users/#{@user.id}/edit" %>
+|
+<%= link_to 'Delete', "/users/#{@user.id}/delete" %>
+|
+<%= link_to 'Back', "/users" %>
+
+<p>Email: <%= @user.email %></p>
+<p>Location: <%= @user.location %></p>

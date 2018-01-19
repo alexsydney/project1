@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id          :integer          not null, primary key
+#  name        :text
+#  address     :text
+#  location    :text
+#  url_website :text
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'test_helper'
 
 class RestaurantTest < ActiveSupport::TestCase

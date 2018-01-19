@@ -1,0 +1,15 @@
+<h1>User Lists - index</h1>
+
+<%= link_to 'Add new user', '/users/new' %> |
+<%= link_to 'Bck to main page', root_path %>
+
+<ul>
+  <%  @users.each do |user| %>
+    <li>
+      <em>
+         <%= link_to user.email, user_path(user.id) %>
+      </em>
+      , <%= user.first_name%> <%= user.last_name%>
+    </li>
+  <% end %>
+</ul>

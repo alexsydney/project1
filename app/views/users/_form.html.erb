@@ -1,0 +1,35 @@
+
+<strong><%= flash[:error] %></strong>
+
+<% if flash[:error_messages].present? %>
+  <ol>
+    <% flash[:error_messages].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <fieldset>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.email_field :email %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :password %>
+    <%= f.password_field :password %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %> <!-- give us  -->
+  </fieldset>
+
+  <%= f.submit 'Create' %>
+<% end %>
