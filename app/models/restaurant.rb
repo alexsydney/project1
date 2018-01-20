@@ -15,10 +15,15 @@
 class Restaurant < ApplicationRecord
 
   # setup for assosication
-  belongs_to :user
+  belongs_to :user, optional: true
 
   has_many :images
   has_many :reviews
-  
+
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :location, presence: true
+  validates :url_website, presence: true
+  validates :user_id, presence: true
 
 end

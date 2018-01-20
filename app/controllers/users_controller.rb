@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = "Error creating account. Try again."
       flash[:error_messages] = user.errors.full_messages
-      
+
       redirect_to new_user_path
     end
   end
@@ -61,7 +61,8 @@ class UsersController < ApplicationController
   def destroy
     User.destroy params[:id]
 
-    redirect_to users_path
+    redirect_to user_path
+    # redirect_to users_path
   end
 
   private

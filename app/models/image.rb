@@ -14,8 +14,10 @@
 class Image < ApplicationRecord
 
   # setup for assosication
-  belongs_to :user
+  belongs_to :user, optional: true
 
-  belongs_to :restaurant
+  belongs_to :restaurant, optional: true
+
+
 
 end

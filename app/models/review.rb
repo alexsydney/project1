@@ -15,10 +15,10 @@
 class Review < ApplicationRecord
 
   # setup for assosication
-  belongs_to :user
+  belongs_to :user, optional: true
+   
+  belongs_to :restaurant, optional: true
 
-  belongs_to :restaurant
-
-  belongs_to :comment
+  belongs_to :comment, optional: true
 
 end

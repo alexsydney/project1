@@ -1,0 +1,11 @@
+<h2>Website: <em>
+  <a href="<%= @restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h2>
+
+<%= link_to 'Edit', "/restaurants/#{@restaurant.id}/edit" %>
+|
+<%= link_to 'Delete', "/restaurants/#{@restaurant.id}/delete" %>
+|
+<%= link_to 'Back', "/restaurants" %>
+
+<p>Email: <%= @restaurant.address %></p>
+<p>Location: <%= @restaurant.location %></p>

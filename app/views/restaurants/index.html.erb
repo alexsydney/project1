@@ -1,0 +1,20 @@
+<h1>Restaurant Lists</h1>
+
+<%= link_to 'Add new restaurant', '/restaurants/new' %> |
+<%= link_to 'Back to main page', root_path %>
+
+<ul>
+  <%  @restaurants.each do |restaurant| %>
+    <li>
+      <em>
+         <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+
+         <%#= link_to restaurant.url_website, restaurant_path(restaurant.id) %>
+      </em>
+
+        <!-- <a href="<%#= restaurant.url_website %>"><%#= restaurant.name%></a> -->
+      , <%= restaurant.address%>
+      , <%= restaurant.location%>
+    </li>
+  <% end %>
+</ul>

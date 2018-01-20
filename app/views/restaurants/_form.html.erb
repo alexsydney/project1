@@ -1,0 +1,35 @@
+<!--
+<strong><%#= flash[:error] %></strong>
+
+<% if flash[:error_messages].present? %>
+  <ol>
+    <% flash[:error_messages].each do |error| %>
+      <li><%#= error %></li>
+    <% end %>
+  </ol>
+<% end %> -->
+
+<%= form_for @restaurant do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :address %>
+    <%= f.text_field :address %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :location %>
+    <%= f.text_field :location %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :url_website %>
+    <%= f.text_field :url_website %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %> <!-- give us  -->
+  </fieldset>
+
+  <%= f.submit 'Create' %>
+<% end %>
