@@ -1,0 +1,18 @@
+<h1>All Images </h1>
+
+<%= link_to 'Add new image', '/images/new' %> |
+<%= link_to 'Back to main page', root_path %>
+
+<ul>
+  <%  @images.each do |image| %>
+    <li>
+      <em>
+         <%= link_to image.restaurant.name, restaurant_path(image.id) %>
+       </em>
+      , post by: <%= image.user.email%>
+      , <%= image.title%>
+      , <%= image.image_url%>
+      ,
+    </li>
+  <% end %>
+</ul>

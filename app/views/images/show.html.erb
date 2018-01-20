@@ -1,0 +1,15 @@
+<h2>Website: <em>
+  <a href="<%= @image.restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h2>
+
+<%= link_to 'Edit', "/images/#{@image.id}/edit" %>
+|
+<%= link_to 'Delete', "/images/#{@image.id}/delete" %>
+|
+<%= link_to 'Back', "/images" %>
+
+<p>title: <%= @image.title %></p>
+<p>description: <%= @image.description %></p>
+<p><%= @image.image_url %></p>
+<p>Posted by: <%= @image.user.email %></p>
+<p>Date post:<%= @image.created_at %></p>
+<p>Last update:<%= @image.updated_at %></p>

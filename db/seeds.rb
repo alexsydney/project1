@@ -28,3 +28,26 @@ r4 = Restaurant.create name: 'Fish At The Rocks', address: '29 Kent St, Sydney, 
 r5 = Restaurant.create name: 'love.fish Barangaroo', address: 'Wulugul Walk, 7/23 Barangaroo Avenue, Wulugul Walk Barangaroo, Sydney, New South Wales 2000 Australia', location: 'Sydney', url_website: 'http://www.lovefish.com.au/', user_id: u5.id
 
 puts "create #{Restaurant.all.length} restaurants "
+
+#### Image ##################
+Image.destroy_all
+
+i1 = Image.created title: 'Dinner at Highlands Prime Steakhouse', description: 'Highlands Prime Steakhouse’s Signature Prime Rib, perfectly seasoned and patiently cooked in low temperature then grilled to perfection', image_url: 'https://www.momontimeout.com/wp-content/uploads/2016/01/skillet-monterey-chicken-recipe-hero.jpg', user_id: image.user.id ,restaurant_id:image.restaurant.id
+
+i2 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i3 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i4 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i5 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i6 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i7 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i8 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i9 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+
+i10 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
