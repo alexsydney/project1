@@ -1,0 +1,24 @@
+<%= form_for @review do |f| %>
+  <fieldset>
+    <%= f.label :title %>
+    <%= f.text_field :title %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :body %>
+    <%= f.text_field :body %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :restaurant_id %>
+    <%= f.text_field :restaurant_id %> <!-- give us  -->
+  </fieldset>
+
+  <%= f.submit 'Create' %>
+<% end %>

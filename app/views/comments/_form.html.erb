@@ -1,0 +1,16 @@
+<%= form_for @restaurant do |f| %>
+  <fieldset>
+    <%= f.label :body %>
+    <%= f.text_field :body %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %> <!-- give us  -->
+  </fieldset>
+  <fieldset>
+    <%= f.label :review_id %>
+    <%= f.text_field :review_id %> <!-- give us  -->
+  </fieldset>
+  
+  <%= f.submit 'Create' %>
+<% end %>

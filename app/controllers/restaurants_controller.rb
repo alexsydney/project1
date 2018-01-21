@@ -18,10 +18,12 @@ class RestaurantsController < ApplicationController
   # Read
   def index
       @restaurants = Restaurant.all
+      redirect_to restaurants_path
   end
 
   def show
      @restaurant = Restaurant.find params[:id]
+     redirect_to restaurant_path
   end
 
   # Update/edit

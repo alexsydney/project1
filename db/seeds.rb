@@ -32,22 +32,74 @@ puts "create #{Restaurant.all.length} restaurants "
 #### Image ##################
 Image.destroy_all
 
-i1 = Image.created title: 'Dinner at Highlands Prime Steakhouse', description: 'Highlands Prime Steakhouse’s Signature Prime Rib, perfectly seasoned and patiently cooked in low temperature then grilled to perfection', image_url: 'https://www.momontimeout.com/wp-content/uploads/2016/01/skillet-monterey-chicken-recipe-hero.jpg', user_id: image.user.id ,restaurant_id:image.restaurant.id
+i1 = Image.create title: 'Dinner at Highlands Prime Steakhouse', description: 'Highlands Prime Steakhouse’s Signature Prime Rib, perfectly seasoned and patiently cooked in low temperature then grilled to perfection', image_url: 'https://www.momontimeout.com/wp-content/uploads/2016/01/skillet-monterey-chicken-recipe-hero.jpg', user_id: u1.id , restaurant_id:r1.id
 
-i2 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+i2 = Image.create title: 'salmon', description: 'samon mix salad', image_url: 'https://www.thebalance.com/how-to-create-an-effective-restaurant-menu-2888585?utm_source=pinterest', user_id: u2.id ,restaurant_id: r2.id
 
-i3 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+i3 = Image.create title: 'sushi', description: 'mix sushi ', image_url: 'https://fthmb.tqn.com/GIq8wTEYO132GaGtGeZPboGCB8c=/768x0/filters:no_upscale()/GettyImages-550046563-575df0105f9b58f22e4216bb.jpg', user_id:u3.id ,restaurant_id:r3.id
 
-i4 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+i4 = Image.create title: 'fish and chip', description: 'fish and chip', image_url: 'https://fthmb.tqn.com/PUtwwWiKbQv04gwiD_GPh8tW7g0=/768x0/filters:no_upscale()/herrings-1204669_1920-56cb16c03df78cfb379a6b4e.jpg', user_id:u4.id ,restaurant_id:r4.id
 
-i5 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+i5 = Image.create title: 'WARM THAI BEEF SALAD', description: 'Spanish onion, capsicum, cherry tomatoes and crispy noodles, caramelised cashews with a spicy Thai dressing', image_url: 'http://img.taste.com.au/jXo3mTmV/taste/2016/11/thai-beef-salad-20774-1.jpeg', user_id: u5.id ,restaurant_id:r5.id
 
-i6 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+i6 = Image.create title: 'RACK OF PORK RIBS', description: 'Served with skinny fries and Greek salad', image_url: 'https://www.tasteofthesouthmagazine.com/wp-content/uploads/2014/12/Herb-Stuffed-Pork-Rib-Roast.gif', user_id: u1.id ,restaurant_id: r2.id
+#
+i7 = Image.create title: 'GAMBERI LINGUINI', description: 'not yet', image_url: 'https://cdn.ricettedigusto.info/2015/06/linguine-ai-gamberi.jpg', user_id: u1.id ,restaurant_id: r3.id
+#
+# i8 = Image.create title: '', description: '', image_url: '', user_id: ,restaurant_id:
+#
+# i9 = Image.create title: '', description: '', image_url: '', user_id: ,restaurant_id:
+#
+# i10 = Image.create title: '', description: '', image_url: '', user_id: ,restaurant_id:
 
-i7 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+puts "create #{Image.all.length} images "
 
-i8 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+#### Review  ########
+Review.destroy_all
 
-i9 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+re1 = Review.create title: 'Food', body: 'Nice food', rating: '4 stars', user_id: u1 , restaurant_id: r1
 
-i10 = Image.created title: '', description: '', image_url: '', user_id: ,restaurant_id:
+re2 = Review.create title: 'Services', body: 'Good service', rating: '4.5 starts', user_id: u2 , restaurant_id: r2
+
+re3 = Review.create title: 'Food', body: 'Good food', rating: '5 stars', user_id: u3 , restaurant_id: r3
+
+re4 = Review.create title: 'Food', body: 'very good food', rating: '4.5 stars', user_id: u4 , restaurant_id: r4
+
+re5 = Review.create title: ' Services', body: 'Very dood service', rating: '5 stars', user_id: u5 , restaurant_id: r5
+
+# re6 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
+#
+# re7 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
+#
+# re8 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
+#
+# re9 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
+#
+# re10 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
+
+puts "create #{Review.all.length} reviews "
+
+#### Comment #######
+Comment.destroy_all
+
+c1 = Comment.create body: 'Gooood', user_id: u1, review_id: re1
+
+c2 = Comment.create body: 'ok', user_id: u2 , review_id: re2
+
+c3 = Comment.create body: 'nice', user_id: u3 , review_id: re3
+
+c4 = Comment.create body: 'nice', user_id: u1 , review_id: re2
+
+c5 = Comment.create body: 'ok', user_id: u1 , review_id: re3
+
+c6 = Comment.create body: 'good', user_id: u2 , review_id: re2
+
+c7 = Comment.create body: 'so good to be true', user_id: u3 , review_id: re3
+
+c8 = Comment.create body: 'oh yeah', user_id: u4 , review_id: re1
+
+c9 = Comment.create body: 'ok cool', user_id: u2 , review_id: re5
+
+c10 = Comment.create body: 'nice', user_id: u3 , review_id: re4
+
+puts "create #{Comment.all.length} comments "

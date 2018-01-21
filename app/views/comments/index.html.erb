@@ -1,0 +1,17 @@
+<h1>Comments Lists</h1>
+
+<%= link_to 'Add new comment', '/comments/new' %> |
+<%= link_to 'Back to main page', root_path %>
+
+<ul>
+  <%  @comments.each do |comment| %>
+    <li>
+      <em>
+         <%= link_to comment.body, comment_path(comment.id) %>
+      </em>
+
+      , <%= comment.user_id%>
+      , <%= comment.review_id%>
+    </li>
+  <% end %>
+</ul>

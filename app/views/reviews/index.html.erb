@@ -1,0 +1,18 @@
+<h1>Review Lists</h1>
+
+<%= link_to 'Add new review', '/reviews/new' %> |
+<%= link_to 'Back to main page', root_path %>
+
+<ul>reviews.each do |review| %>
+    <li>
+      <em>
+         <%= link_to review.restaurant.name, review_path(review.id) %>
+
+      </em>
+      , <%= review.title%>
+      , <%= review.rating%>
+      , <%= review.user.email%>
+
+    </li>
+  <% end %>
+</ul>
