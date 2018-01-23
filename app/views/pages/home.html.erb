@@ -1,1 +1,8 @@
-<h1>Home page</h1>
+<br>
+<%= form_tag "/restaurants/search" do %>
+
+ Search for:
+ <%= text_field_tag :query, nil, placeholder: "Restaurant name or location" %>
+ <%= button_tag :Search %>
+
+<% end %>

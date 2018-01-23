@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   def index
      @comments = Comment.all
 
-     redirect_to comments_path
+     # redirect_to comments_path
   end
 
   def show
@@ -43,9 +43,9 @@ class CommentsController < ApplicationController
 
   # delete
   def destroy
-    Comment.destroy find params[:id]
+    Comment.destroy params[:id]
 
-    redirect_to comment_path
+    redirect_to comments_path
   end
 
   private

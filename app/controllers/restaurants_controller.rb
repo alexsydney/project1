@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
 
+  before_action :check_if_logged_in, only: [:new, :create, :edit, :update, :destroy]
+
   def home
 
   end
@@ -10,20 +12,45 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-      restaurant = Restaurant.create restaurant_params
-
-      redirect_to restaurants_path
+      restaurant = Restaurant.new restaurant_params
+      restaurant.user = @current_user
+      if restaurant.save
+        redirect_to restaurant
+      else
+        # restaurant could not be saved
+        flash[:errors] = restaurant.errors.full_messages
+        redirect_to new_restaurant_path
+      end
   end
 
   # Read
   def index
       @restaurants = Restaurant.all
-      redirect_to restaurants_path
+  end
+
+  def search
+    @results = Restaurant.where('name LIKE ?', "%#{params[:query]}%")
+    # raise 'hell'
+
   end
 
   def show
      @restaurant = Restaurant.find params[:id]
-     redirect_to restaurant_path
+     # restaurant = Restaurant.find params[:id]
+     # SELECT * FROM restaurant WHERE (restaurant.id = 10)
+     #
+     # @location = Restaurant.find params[:location]
+
+     country = 'AU'
+     api_key = "cab770f77fb9178ef7b6fc933e3f93ec"
+
+    response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?q=#{@restaurant.location},#{country}&appid=#{api_key}")
+    @data  = response.body
+    @temp_min = response['main']['temp_min'] - 273.15
+    @temp_max = response['main']['temp_max'] - 273.15
+    @humidity = response['main']['humidity']
+    @pressure = response['main']['pressure']
+
   end
 
   # Update/edit
@@ -43,7 +70,7 @@ class RestaurantsController < ApplicationController
   def destroy
     Restaurant.destroy params[:id]
 
-    redirect_to restaurant_path
+    redirect_to restaurants_path
   end
 
   private

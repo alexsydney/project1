@@ -3,8 +3,7 @@
 # Table name: users
 #
 #  id               :integer          not null, primary key
-#  first_name       :text
-#  last_name        :text
+#  nickname       :text
 #  email            :text
 #  location         :text
 #  created_at       :datetime         not null
@@ -25,7 +24,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :nickname, presence: true
 
 end

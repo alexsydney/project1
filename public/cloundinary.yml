@@ -1,0 +1,40 @@
+development:
+  secret_key_base: 8ded887105ced3305c24b64b3531ec861fbc55c90f3a248a8435a152217d01581eecc8565ef3391b5e50bc6b422d7f3c7c64667bd96a5ea1ec23d4452ab16bab
+
+  cloudinary_cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  cloudinary_api_key: Rails.application.secrets.cloudinary_api_key
+  cloudinary_api_secret: Rails.application.secrets.cloudinary.cloudinary_api_secret
+  enhance_image_tag: true
+  static_image_support: true
+
+
+
+test:
+  secret_key_base: 80a99eaed85baafe360c6baf208c79f9f98cc6f8ccfdc831f736a5fd4a8bc7af7a92a50ade233b94c7eef5640113bfa037292001c4eece91e6d9c2b33df08f21
+  cloudinary_cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  cloudinary_api_key: Rails.application.secrets.cloudinary_api_key
+  cloudinary_api_secret: Rails.application.secrets.cloudinary.cloudinary_api_secret
+  enhance_image_tag: true
+  static_image_support: true
+
+
+
+# Do not keep production secrets in the unencrypted secrets file.
+# Instead, either read values from the environment.
+# Or, use `bin/rails secrets:setup` to configure encrypted secrets
+# and move the `production:` environment over there.
+
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+
+  cloudinary_cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  cloudinary_api_key: Rails.application.secrets.cloudinary_api_key
+  cloudinary_api_secret: Rails.application.secrets.cloudinary.cloudinary_api_secret
+  enhance_image_tag: true
+  static_image_support: true
+
+
+
+# cloud_name: dysf3fame
+# api_key: 218159184792469
+# api_secret: lLkqHmtumnobraqJcZMctUfMQaQ

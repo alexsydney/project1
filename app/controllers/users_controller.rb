@@ -16,10 +16,17 @@ class UsersController < ApplicationController
 
   def create
     user = User.create user_params
-    if user.id.present?
+    if user.id.present?  # user.presisted?
       session[:user_id] = user.id
+      if params[:file].present?
+         req = Cloudinary::Uploader.upload(params[:file])
+
+         user.image = req["public_id"]
+      end
+       user.save
       redirect_to profile_path
     else
+      # raise 'hell'
       flash[:error] = "Error creating account. Try again."
       flash[:error_messages] = user.errors.full_messages
 
@@ -43,9 +50,18 @@ class UsersController < ApplicationController
 
   def update
     user = User.find params[:id]
-    user.update user_params
+    # user.update user_params
 
-    redirect_to user_path
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+
+      user.image = req["public_id"]
+    end
+      user.update_attributes(user_params)
+      user.save
+
+     redirect_to user_path(user)
+
 
   end
   #
@@ -61,15 +77,14 @@ class UsersController < ApplicationController
   def destroy
     User.destroy params[:id]
 
-    redirect_to user_path
-    # redirect_to users_path
+    redirect_to users_path
   end
 
   private
 
   def user_params
 
-   params.require(:user).permit(:first_name, :last_name, :email, :location, :password, :password_confirmation, :is_admin)
+   params.require(:user).permit(:nickname, :email, :location, :password, :password_confirmation, :is_admin)
 
   end
 

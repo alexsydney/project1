@@ -1,3 +1,20 @@
+<script type="text/javascript">
+
+$(function () {
+
+  $("#rateYo").rateYo({
+    rating: <%= @review.rating %>
+  });
+
+  $("#rateYo").on('rateyo.set', function (e) {
+    let rating =  $(this).rateYo("rating");
+    $("#rating").val( rating );
+  });
+
+});
+
+</script>
+
 <%= form_for @review do |f| %>
   <fieldset>
     <%= f.label :title %>
@@ -9,7 +26,8 @@
   </fieldset>
   <fieldset>
     <%= f.label :rating %>
-    <%= f.text_field :rating %> <!-- give us  -->
+    <div id="rateYo"></div>
+    <%= f.hidden_field :rating, id: 'rating' %> <!-- used to submit the rateyo star rating  -->
   </fieldset>
   <fieldset>
     <%= f.label :user_id %>
@@ -20,5 +38,5 @@
     <%= f.text_field :restaurant_id %> <!-- give us  -->
   </fieldset>
 
-  <%= f.submit 'Create' %>
+  <%= f.submit %>
 <% end %>

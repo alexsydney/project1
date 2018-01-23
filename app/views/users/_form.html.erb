@@ -1,7 +1,6 @@
-
-<strong><%= flash[:error] %></strong>
-
-<% if flash[:error_messages].present? %>
+<strong><%= flash[:errors] %></strong>
+<strong>Please correct the follow errors</strong>
+<% if flash[:error].present? %>
   <ol>
     <% flash[:error_messages].each do |error| %>
       <li><%= error %></li>
@@ -9,27 +8,51 @@
   </ol>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, class:"form-horizontal", html: {multipart: true} do |f| %>
+<div class="form-group">
+  <div class="col-sm-6">
   <fieldset>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %> <!-- give us  -->
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, class:"form-control" %>
   </fieldset>
+</div>
+</div>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <fieldset>
+        <%= f.label :email %>
+        <%= f.email_field :email, class:"form-control" %>
+      </fieldset>
+      </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-6">
   <fieldset>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %> <!-- give us  -->
+    <%= f.label :image %>
+    <%= f.cl_image_upload :image %> <!-- give us  -->
   </fieldset>
-  <fieldset>
-    <%= f.label :email %>
-    <%= f.email_field :email %> <!-- give us  -->
-  </fieldset>
-  <fieldset>
-    <%= f.label :password %>
-    <%= f.password_field :password %> <!-- give us  -->
-  </fieldset>
+</div>
+</div>
+  <div class="form-group">
+    <div class="col-sm-6">
+    <fieldset>
+      <%= f.label :password %>
+      <%= f.password_field :password, class:"form-control"  %>
+    </fieldset>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-6">
   <fieldset>
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> <!-- give us  -->
+    <%= f.password_field :password_confirmation, class:"form-control" %>
   </fieldset>
+</div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit 'submit', class:"btn btn-default" %>
+  </div>
+</div>
 
-  <%= f.submit 'Create' %>
 <% end %>

@@ -1,6 +1,9 @@
 <h1>Restaurant Lists</h1>
 
-<%= link_to 'Add new restaurant', '/restaurants/new' %> |
+<%= link_to 'Add', '/restaurants/new' %> |
+<%= link_to 'Delete', restaurant_path(:id), method: :delete  %>
+
+|
 <%= link_to 'Back to main page', root_path %>
 
 <ul>

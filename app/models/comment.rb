@@ -15,6 +15,6 @@ class Comment < ApplicationRecord
   # setup for assosication
   belongs_to :user, optional: true
 
-  has_many :reviews
+  belongs_to :review
 
 end

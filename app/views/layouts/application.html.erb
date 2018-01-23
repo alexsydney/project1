@@ -6,26 +6,35 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <%= cloudinary_js_config%>
+
   </head>
+  <div class='container'>
+    <body>
 
-  <body>
-    <h1>Welcome to Restaurant Review App</h1>
-    <hr>
-    <nav>
-      <% if @current_user.present? %>
-
-        <%= link_to "#{@current_user.first_name} #{@current_user.last_name}",  profile_path %>
-         |
-         <%= link_to 'Logout', login_path, method: :delete %>
-         <% else %>
-         <%= link_to 'Login', login_path %>
-      <% end %>
-    </nav>
-    <%= yield %>
-
-    <footer>
       <hr>
-     &copy; 2018  Project 1 - Alex Pham
-    </footer>
+      <nav class="nav navbar-nav navbar-right">
+
+        <% if @current_user.present? %>
+
+        <%= link_to "#{@current_user.nickname}",  profile_path %>
+        |
+        <%= link_to 'Logout', login_path, method: :delete %>
+        <% else %>
+        <%= link_to 'SignIn', login_path %>
+        |
+        <%= link_to 'SignUp', new_user_path %>
+        <% end %>
+      </nav>
+        <h1>Welcome to Restaurant Review App</h1>
+      <%= yield %>
+      <br>
+
+      <footer>
+        <hr>
+        &copy; 2018  Project 1 - Alex Pham
+      </footer>
+    </div>
   </body>
 </html>

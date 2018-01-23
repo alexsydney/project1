@@ -1,11 +1,38 @@
+
 <h2>Website: <em>
   <a href="<%= @restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h2>
 
-<%= link_to 'Edit', "/restaurants/#{@restaurant.id}/edit" %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
 |
-<%= link_to 'Delete', "/restaurants/#{@restaurant.id}/delete" %>
+<%= link_to 'Delete', restaurant_path, method: :delete %>
 |
 <%= link_to 'Back', "/restaurants" %>
 
-<p>Email: <%= @restaurant.address %></p>
+<p>Address: <%= @restaurant.address %></p>
 <p>Location: <%= @restaurant.location %></p>
+<p> <strong>Temperature:</strong>
+     <%=  @temp_min %>
+     -
+     <%= @temp_max  %> &deg;C
+</p>
+<p><strong>Humidity:</strong>
+  <%= @humidity %>%
+</p>
+<p>
+  <strong>Pressure:</strong>
+  <%= @pressure %> hpa
+</p>
+<p>
+  <strong>Data: </strong>
+  <%= @data %>
+</p>
+<p>Map: </p>
+<p>Restaurant near by:</p>
+<%= link_to 'Add Image', new_restaurant_image_path(@restaurant) %>
+<br>
+
+<%  @restaurant.images.each do |image| %>
+     <%= cl_image_tag image.image_url %><br>
+
+     <%#= f.cl_image_upload :image %>
+<% end %>

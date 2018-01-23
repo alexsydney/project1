@@ -7,12 +7,12 @@
   <%  @images.each do |image| %>
     <li>
       <em>
-         <%= link_to image.restaurant.name, restaurant_path(image.id) %>
+         <%= link_to image.restaurant.name, restaurant_path(image.restaurant.id) %>
        </em>
       , post by: <%= image.user.email%>
       , <%= image.title%>
-      , <%= image.image_url%>
-      
+      , <%= image_tag image.image_url%>
+        <%#= image_tag @work.image  %>
     </li>
   <% end %>
 </ul>

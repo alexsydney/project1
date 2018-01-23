@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # setup root for webpage
   root to: 'pages#home'
 
+  post '/restaurants/search' => 'restaurants#search'
+
   # setup for login routes
   get '/login' => 'session#new'
   post '/login' => 'session#create'
@@ -15,12 +17,14 @@ Rails.application.routes.draw do
   # setup for profile
   get '/profile' => 'users#profile'
 
-  resources :restaurants
+  # nested routes for restaurants
+  resources :restaurants do
+    resources :images
+    resources :reviews do
+      resources :comments
+    end
+  end
 
-  resources :images
 
-  resources :reviews
-
-  resources :comments
 
 end

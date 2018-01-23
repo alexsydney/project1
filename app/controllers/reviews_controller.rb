@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  def hom
+  def home
 
   end
 
@@ -17,12 +17,10 @@ class ReviewsController < ApplicationController
   # Read
   def index
     @reviews = Review.all
-    redirect_to reviews_path
   end
 
   def show
     @review = Review.find params[:id]
-    redirect_to review_path
   end
 
   # Edit/Update
@@ -39,10 +37,12 @@ class ReviewsController < ApplicationController
 
   #
   def destroy
-    Review.destroy find params[:id]
-    redirect_to review_path
+    Review.destroy params[:id]
+    redirect_to reviews_path
+
 
   end
+
 
   private
 

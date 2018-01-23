@@ -26,4 +26,7 @@ class Restaurant < ApplicationRecord
   validates :url_website, presence: true
   validates :user_id, presence: true
 
+  geocoded_by :location  # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
+
 end
