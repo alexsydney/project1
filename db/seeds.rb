@@ -101,8 +101,8 @@ re4 = Review.create title: 'Food', body: 'very good food', rating: '4.5', user: 
 
 re5 = Review.create title: ' Services', body: 'Very dood service', rating: '1.5', user: u5 , restaurant: r5
 
-# re6 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
-#
+re6 = Review.create title: 'Food', body: 'Nice food and good service', rating: '4.5', user:u1 , restaurant:r1
+
 # re7 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
 #
 # re8 = Review.create title: '', body: '', rating: '', user_id: , restaurant_id:
