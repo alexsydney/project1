@@ -1,11 +1,11 @@
-<h1>Restaurant Lists</h1>
+<hr>
 
-<%= link_to 'Add', '/restaurants/new' %> |
-<%= link_to 'Delete', restaurant_path(:id), method: :delete  %>
-
-|
-<%= link_to 'Back to main page', root_path %>
-
+<%= link_to 'Add', '/restaurants/new', class:"btn btn-primary" %>
+<%= link_to 'Delete', restaurant_path(:id), method: :delete, class:"btn btn-primary"  %>
+<%= link_to 'Back to main page', root_path, class:"btn btn-primary" %>
+<hr>
+<h4>Restaurant Lists</h4>
+<br>
 <ul>
   <%  @restaurants.each do |restaurant| %>
     <li>

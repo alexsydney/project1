@@ -1,15 +1,16 @@
 
-<h2>Website: <em>
-  <a href="<%= @restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h2>
+<br>
+<hr>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
-|
-<%= link_to 'Delete', restaurant_path, method: :delete %>
-|
-<%= link_to 'Back', "/restaurants" %>
+<%= link_to 'Delete', restaurant_path, method: :delete, class:"btn btn-primary" %>
 
-<p>Address: <%= @restaurant.address %></p>
-<p>Location: <%= @restaurant.location %></p>
+<%= link_to 'Back', "/restaurants", class:"btn btn-primary" %>
+<h4>Website: <em>
+  <a href="<%= @restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h4>
+  <br>
+<p><strong>Address: </strong><%= @restaurant.address %></p>
+<p><strong>Location: </strong><%= @restaurant.location %></p>
 <p> <strong>Temperature:</strong>
      <%=  @temp_min %>
      -
@@ -26,13 +27,14 @@
   <strong>Data: </strong>
   <%= @data %>
 </p>
-<p>Map: </p>
-<p>Restaurant near by:</p>
-<%= link_to 'Add Image', new_restaurant_image_path(@restaurant) %>
-<br>
-
+<p><strong>Map:</strong>  </p>
+<p><strong>Restaurant near by:</strong> </p>
+<hr>
+<%= link_to 'Add Photo', new_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Reviews', restaurant_reviews_path(@restaurant), class:"btn btn-primary" %>
+<%#= link_to 'Comments', restaurant_review_comments_path(@restaurant), class:"btn btn-primary" %>
+<hr>
 <%  @restaurant.images.each do |image| %>
      <%= cl_image_tag image.image_url %><br>
-
      <%#= f.cl_image_upload :image %>
 <% end %>

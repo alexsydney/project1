@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family:  'Lucida, 'sans-serif;
+  // color: darkSalmon;
+}
 img {
    max-width: 20vw;
  }

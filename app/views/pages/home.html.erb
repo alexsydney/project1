@@ -1,8 +1,15 @@
 <br>
-<%= form_tag "/restaurants/search" do %>
+<div class="row">
+  <div class="col-md-6">
 
- Search for:
- <%= text_field_tag :query, nil, placeholder: "Restaurant name or location" %>
- <%= button_tag :Search %>
-
-<% end %>
+    <%= form_tag "/restaurants/search" do %>
+    <div class="input-group">
+    <!-- Search for: -->
+    <%= text_field_tag :query, nil, class:"form-control", placeholder: "enter location to search restaurant name" %>
+    <span class="input-group-btn">
+    <%= button_tag :Search, class:"btn btn-primary" %>
+    </span>
+    <% end %>
+  </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+</div>

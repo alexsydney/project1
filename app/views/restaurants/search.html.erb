@@ -1,15 +1,21 @@
-<h1>Search results</h1>
+<hr>
+<h4>Search results</h4>
+<br>
 <ul>
-  <% results.each do |result| %>
+  <% @results.each do |result| %>
     <li>
-
+      <em>
+        <%= link_to result.name, restaurant_path(result.id) %>
+      </em>
+      , <%= result.address%>
+      , <%= result.location%>
     </li>
   <% end %>
 </ul>
 
 
 
-t.text "name"
+<!-- t.text "name"
 t.text "address"
 t.text "location"
 t.text "url_website"
@@ -17,4 +23,4 @@ t.integer "user_id"
 t.datetime "created_at", null: false
 t.datetime "updated_at", null: false
 t.float "latitude"
-t.float "longitude"
+t.float "longitude" -->

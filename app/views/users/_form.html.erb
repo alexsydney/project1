@@ -1,6 +1,6 @@
 <strong><%= flash[:errors] %></strong>
-<strong>Please correct the follow errors</strong>
 <% if flash[:error].present? %>
+<strong>Please correct the follow errors</strong>
   <ol>
     <% flash[:error_messages].each do |error| %>
       <li><%= error %></li>
@@ -11,30 +11,22 @@
 <%= form_for @user, class:"form-horizontal", html: {multipart: true} do |f| %>
 <div class="form-group">
   <div class="col-sm-6">
-  <fieldset>
-    <%= f.label :nickname %>
-    <%= f.text_field :nickname, class:"form-control" %>
-  </fieldset>
-</div>
-</div>
-  <div class="form-group">
-    <div class="col-sm-6">
-      <fieldset>
-        <%= f.label :email %>
-        <%= f.email_field :email, class:"form-control" %>
-      </fieldset>
-      </div>
+    <fieldset>
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, class:"form-control" %>
+    </fieldset>
   </div>
-  <div class="form-group">
-    <div class="col-sm-6">
-  <fieldset>
-    <%= f.label :image %>
-    <%= f.cl_image_upload :image %> <!-- give us  -->
-  </fieldset>
 </div>
+<div class="form-group">
+  <div class="col-sm-6">
+    <fieldset>
+      <%= f.label :email %>
+      <%= f.email_field :email, class:"form-control" %>
+    </fieldset>
+  </div>
 </div>
-  <div class="form-group">
-    <div class="col-sm-6">
+<div class="form-group">
+  <div class="col-sm-6">
     <fieldset>
       <%= f.label :password %>
       <%= f.password_field :password, class:"form-control"  %>
@@ -43,16 +35,18 @@
 </div>
 <div class="form-group">
   <div class="col-sm-6">
-  <fieldset>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class:"form-control" %>
-  </fieldset>
+    <fieldset>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class:"form-control" %>
+    </fieldset>
+  </div>
 </div>
-</div>
+
 <div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <%= f.submit 'submit', class:"btn btn-default" %>
+  <div class="col-sm-offset-6 col-sm-6">
+    <%= f.submit 'submit', class:"btn btn-primary" %>
   </div>
 </div>
 
 <% end %>
+<br>

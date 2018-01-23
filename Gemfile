@@ -61,6 +61,9 @@ gem 'jquery-rails'
 gem 'geocoder'
 gem 'httparty'
 gem 'cloudinary'
+# for multip searching in postgresql
+gem 'pg_search'
+
 
 # gem 'ratyrate'
 # gem 'ratyrate', :github => 'azizmashkour/rails-5-ratyrate'
