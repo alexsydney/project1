@@ -12,15 +12,29 @@
     </li>
   <% end %>
 </ul>
+<script>
+ var restaurant_locations = <%= @results.to_json.html_safe %>;
 
+ function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 80,
+   });
 
+   var bounds = new google.maps.LatLngBounds();
 
-<!-- t.text "name"
-t.text "address"
-t.text "location"
-t.text "url_website"
-t.integer "user_id"
-t.datetime "created_at", null: false
-t.datetime "updated_at", null: false
-t.float "latitude"
-t.float "longitude" -->
+   for( let i=0; i < restaurant_locations.length; i++ ){
+     let restaurant = restaurant_locations[i];
+     let m = new google.maps.Marker({
+       position: restaurant,
+       map: map
+     });
+     bounds.extend(restaurant);
+   }
+
+   map.fitBounds(bounds); // this does the auto-centering
+
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHewMmcudJqvttFYpTrQ-rnh4lM7abFtA&callback=initMap"
+type="text/javascript"></script>

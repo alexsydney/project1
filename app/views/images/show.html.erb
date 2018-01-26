@@ -1,11 +1,9 @@
 <h2>Website: <em>
   <a href="<%= @image.restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h2>
 
-<%= link_to 'Edit', "/images/#{@image.id}/edit" %>
-|
-<%= link_to 'Delete', image_path, method: :delete %>
-|
-<%= link_to 'Back', "/images" %>
+<%= link_to 'Edit', "/images/#{@image.id}/edit", class:"btn btn-primary" %>
+<%= link_to 'Delete', image_path, method: :delete, class:"btn btn-primary" %>
+<%= link_to 'Back', "/images", class:"btn btn-primary" %>
 
 <p>title: <%= @image.title %></p>
 <p>description: <%= @image.description %></p>

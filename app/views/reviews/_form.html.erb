@@ -1,9 +1,20 @@
+<strong><%= flash[:errors] %></strong>
+<% if flash[:error].present? %>
+<strong>Please correct the follow errors</strong>
+  <ol>
+    <% flash[:error_messages].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+
 <script type="text/javascript">
 
 $(function () {
 
   $("#rateYo").rateYo({
-    rating: <%= @review.rating %>
+    rating: <%= @review.rating || 0  %>
   });
 
   $("#rateYo").on('rateyo.set', function (e) {
@@ -15,28 +26,23 @@ $(function () {
 
 </script>
 
-<%= form_for @review do |f| %>
+
+<%= form_for [@restaurant, @review] do |f| %>
   <fieldset>
     <%= f.label :title %>
     <%= f.text_field :title %> <!-- give us  -->
   </fieldset>
+ <strong>Like to say something to review this restaurant:</strong>
   <fieldset>
-    <%= f.label :body %>
-    <%= f.text_field :body %> <!-- give us  -->
+  <%#= f.label :body %>
+    <%= f.text_area :body, cols: 60, rows: 6 %> <!-- give us  -->
   </fieldset>
   <fieldset>
     <%= f.label :rating %>
     <div id="rateYo"></div>
-    <%= f.hidden_field :rating, id: 'rating' %> <!-- used to submit the rateyo star rating  -->
-  </fieldset>
-  <fieldset>
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %> <!-- give us  -->
-  </fieldset>
-  <fieldset>
-    <%= f.label :restaurant_id %>
-    <%= f.text_field :restaurant_id %> <!-- give us  -->
+    <%= f.hidden_field :rating, id: 'rating' %>
   </fieldset>
 
-  <%= f.submit %>
+
+  <%= f.submit class:"btn btn-primary" %>
 <% end %>

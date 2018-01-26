@@ -1,4 +1,4 @@
-<h1>User Lists - index</h1>
+<h4>User Lists - index</h4>
 
 <%= link_to 'Add new user', '/users/new' %> |
 <%= link_to 'Bck to main page', root_path %>
@@ -9,7 +9,7 @@
       <em>
          <%= link_to user.email, user_path(user.id) %>
       </em>
-      , <%= user.nickname%> 
+      , <%= user.nickname%>
     </li>
   <% end %>
 </ul>

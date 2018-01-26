@@ -1,13 +1,13 @@
 <h1>Comments Lists</h1>
 
-<%= link_to 'Add new comment', '/comments/new' %> |
-<%= link_to 'Back to main page', root_path %>
+<%= link_to 'Add new comment', '/comments/new', class:"btn btn-primary" %> |
+<%= link_to 'Back to main page', root_path, class:"btn btn-primary" %>
 
 <ul>
   <%  @comments.each do |comment| %>
     <li>
       <em>
-         <%= link_to comment.body, comment_path(comment.id) %>
+         <%= link_to comment.body, restaurant_review_comments_path(restaurant_id: restaurants.id, review_id: reviews.id) %>
       </em>
 
       , <%= comment.user_id%>

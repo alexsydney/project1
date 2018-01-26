@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+  before_action :check_if_logged_in, only: [:new, :create]
+
+
   def home
 
   end
@@ -7,12 +10,22 @@ class CommentsController < ApplicationController
   # Create
   def new
     @comment = Comment.new
+    @restaurant = Restaurant.find params[:restaurant_id]
+    @review = Review.find params[:review_id]
   end
 
   def create
-    restaurant = Restaurant.create comment_params
-
-    redirect_to comments_path
+    comment = Comment.new comment_params
+    comment.user = @current_user
+    comment.review_id = params[:review_id]
+    # raise 'hell'
+    if comment.save
+      # raise 'hell'
+      redirect_to restaurant_path( params[:restaurant_id] )
+    else
+      flash[:error] = "Error creating coment. Try again."
+      flash[:error_messages] = comment.errors.full_messages
+    end
   end
 
   # Read
@@ -51,7 +64,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :user_id, :review_id )
+    params.require(:comment).permit(:body )
   end
 
 end

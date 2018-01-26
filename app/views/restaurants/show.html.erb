@@ -1,11 +1,14 @@
-
-<br>
+<!-- <style>
+      #map {
+       height: 400px;
+       width: 100%;
+      }
+</style> -->
 <hr>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %>
-
 <%= link_to 'Delete', restaurant_path, method: :delete, class:"btn btn-primary" %>
-
 <%= link_to 'Back', "/restaurants", class:"btn btn-primary" %>
+<hr>
 <h4>Website: <em>
   <a href="<%= @restaurant.url_website %>"><%= @restaurant.name %></a> </em> </h4>
   <br>
@@ -23,18 +26,78 @@
   <strong>Pressure:</strong>
   <%= @pressure %> hpa
 </p>
-<p>
-  <strong>Data: </strong>
-  <%= @data %>
-</p>
-<p><strong>Map:</strong>  </p>
-<p><strong>Restaurant near by:</strong> </p>
+<!-- <p> -->
+  <!-- <strong>Description:</strong> -->
+  <%#= @description %>
+<!-- </p> -->
+<!-- <p>
+  <strong>Data: </strong> -->
+  <%#= @data %>
+<!-- </p> -->
+
+<div id="map"></div>
+<br>
+<p><strong>Check out restaurant near by:</strong> </p>
+ <% @near_by.each do |nearby| %>
+  <a href="<%= nearby.url_website %> "><%= nearby.name  %></a> , <%= nearby.address %>  <br>
+<% end  %>
+
 <hr>
 <%= link_to 'Add Photo', new_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
-<%= link_to 'Reviews', restaurant_reviews_path(@restaurant), class:"btn btn-primary" %>
-<%#= link_to 'Comments', restaurant_review_comments_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Edit Photo', new_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+<%#= link_to 'Reviews', restaurant_reviews_path(@restaurant), class:"btn btn-primary" %>
+
+<%#= link_to 'Comments', restaurant_review_comments_path(@restaurant, @review), class:"btn btn-primary" %>
+<hr>
+<h4>Review:</h4>
+<hr>
+<%  @restaurant.reviews.each do |review| %>
+     <strong><%= review.title %></strong><br>
+    <%= review.body %> <div id="rateyo-<%= review.id %>"></div>Review by: <%= review.user.nickname%> <br>
+    <hr>
+    <h4>Comments</h4>
+    <hr>
+    <% review.comments.each do |comment| %>
+       From: <%= comment.user.nickname %><br>
+       <%= simple_format(comment.body) %>
+       <hr>
+    <% end %>
+    <%= link_to "Add Comment", new_restaurant_review_comment_path(@restaurant, review), class:"btn btn-primary" %>
+    <hr>
+    <script type="text/javascript">
+    $("#rateyo-<%= review.id %>").rateYo({
+      rating: <%= review.rating %>,
+      starWidth: "20px",
+      readOnly: true
+    });
+    </script>
+
+<% end %>
+<!-- <%# @restaurant.reviews.comments.each do |comment| %>
+  <%#= comment.body %>
+<%# end %> -->
 <hr>
 <%  @restaurant.images.each do |image| %>
-     <%= cl_image_tag image.image_url %><br>
+     <%= cl_image_tag image.image_url %><br><br>
      <%#= f.cl_image_upload :image %>
 <% end %>
+
+<script>
+      function initMap() {
+        var restaurant = {lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: restaurant
+        });
+        var marker = new google.maps.Marker({
+          position: restaurant,
+          map: map
+        });
+      }
+    </script>
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHewMmcudJqvttFYpTrQ-rnh4lM7abFtA&callback=initMap"
+      type="text/javascript">
+</script>

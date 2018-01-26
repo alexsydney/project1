@@ -1,11 +1,11 @@
 <h2>Website: <em>
   <a href="<%= @comment.body %>"><%= @comment.body %></a> </em> </h2>
 
-<%= link_to 'Edit', "/comments/#{@comment.id}/edit" %>
+<%= link_to 'Edit', "/comments/#{@comment.id}/edit", class:"btn btn-primary" %>
 |
-<%= link_to 'Delete', comment_path, method: :delete %>
+<%= link_to 'Delete', comment_path, method: :delete, class:"btn btn-primary" %>
 |
-<%= link_to 'Back', "/comments" %>
+<%= link_to 'Back', "/comments", class:"btn btn-primary" %>
 
 <p>user_id: <%= @comment.user_id %></p>
 <p>review_id: <%= @comment.review_id %></p>

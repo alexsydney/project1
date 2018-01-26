@@ -1,13 +1,15 @@
-<h1>Review Lists</h1>
+<hr>
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
 
-<%= link_to 'Add new review', '/reviews/new' %> |
-<%= link_to 'Back to main page', root_path %>
-
+<%#= link_to 'Add new review', restaurant_reviews_path, class:"btn btn-primary" %>
+<%= link_to 'Back to main page', root_path, class:"btn btn-primary" %>
+<hr>
+<h4>Review Lists</h4>
 <ul>
   <% @reviews.each do |review| %>
     <li>
       <em>
-         <%= link_to review.restaurant.name, review_path(review.id) %>
+         <%= link_to review.restaurant.name, restaurant_review_path(restaurant_id: review.restaurant, id: review) %>
 
       </em>
       , <%= review.title%>

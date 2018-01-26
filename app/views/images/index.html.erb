@@ -1,7 +1,7 @@
-<h1>All Images </h1>
+<h4>All Images </h4>
 
-<%= link_to 'Add new image', '/images/new' %> |
-<%= link_to 'Back to main page', root_path %>
+<%= link_to 'Add new image', '/images/new', class:"btn btn-primary" %> 
+<%= link_to 'Back to main page', root_path, class:"btn btn-primary" %>
 
 <ul>
   <%  @images.each do |image| %>
@@ -51,5 +51,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>

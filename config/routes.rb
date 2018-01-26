@@ -19,10 +19,12 @@ Rails.application.routes.draw do
 
   # nested routes for restaurants
   resources :restaurants do
-    resources :images
+
     resources :reviews do
       resources :comments
     end
+
+    resources :images
   end
 
 

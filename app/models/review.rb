@@ -16,9 +16,9 @@ class Review < ApplicationRecord
 
   # setup for assosication
   belongs_to :user, optional: true
-   
+
   belongs_to :restaurant, optional: true
 
-  belongs_to :comment, optional: true
+  has_many :comments
 
 end

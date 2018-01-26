@@ -1,3 +1,4 @@
+
 <hr>
 
 <%= link_to 'Add', '/restaurants/new', class:"btn btn-primary" %>
@@ -14,10 +15,48 @@
 
          <%#= link_to restaurant.url_website, restaurant_path(restaurant.id) %>
       </em>
-
-        <!-- <a href="<%#= restaurant.url_website %>"><%#= restaurant.name%></a> -->
       , <%= restaurant.address%>
-      , <%= restaurant.location%>
+      , <%= restaurant.location%> <br>
+      average rating: <div class="rating" data-rateyo-rating="<%= restaurant.reviews.sum(:rating)/restaurant.reviews.length %>"></div>
     </li>
+
   <% end %>
+  <!-- <div id="map"></div> -->
 </ul>
+<div id="map"></div>
+<!-- raise 'hell' -->
+<script>
+ var restaurant_locations = <%= @locations.to_json.html_safe %>;
+
+ function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 80,
+   });
+
+   var bounds = new google.maps.LatLngBounds();
+
+   for( let i=0; i < restaurant_locations.length; i++ ){
+     let restaurant = restaurant_locations[i];
+     let m = new google.maps.Marker({
+       position: restaurant,
+       map: map
+     });
+     bounds.extend(restaurant);
+   }
+
+   map.fitBounds(bounds); // this does the auto-centering
+
+  }
+</script>
+
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHewMmcudJqvttFYpTrQ-rnh4lM7abFtA&callback=initMap"
+      type="text/javascript">
+</script>
+<script type="text/javascript">
+$(".rating").rateYo({
+  starWidth: "20px",
+  readOnly: true
+});
+</script>

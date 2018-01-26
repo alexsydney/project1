@@ -26,6 +26,10 @@ class RestaurantsController < ApplicationController
   # Read
   def index
       @restaurants = Restaurant.all
+      @locations = @restaurants.map do |g|
+        {lat: g.latitude, lng: g.longitude}
+
+      end
   end
 
   def search
@@ -38,13 +42,12 @@ class RestaurantsController < ApplicationController
 
   def show
      @restaurant = Restaurant.find params[:id]
-     # restaurant = Restaurant.find params[:id]
-     # SELECT * FROM restaurant WHERE (restaurant.id = 10)
-     #
-     # @location = Restaurant.find params[:location]
-
+     # raise 'hell'
      country = 'AU'
      api_key = "cab770f77fb9178ef7b6fc933e3f93ec"
+
+     @near_by = Restaurant.near([@restaurant.latitude, @restaurant.longitude], 2, :units => :km)
+     # raise 'hell'
 
     response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?q=#{@restaurant.location},#{country}&appid=#{api_key}")
     @data  = response.body
@@ -52,7 +55,8 @@ class RestaurantsController < ApplicationController
     @temp_max = response['main']['temp_max'] - 273.15
     @humidity = response['main']['humidity']
     @pressure = response['main']['pressure']
-
+    @description = response['main']['description']
+    # raise 'hell'
   end
 
   # Update/edit

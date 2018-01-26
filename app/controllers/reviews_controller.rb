@@ -7,16 +7,29 @@ class ReviewsController < ApplicationController
   # Create
   def new
     @review =  Review.new
+    @restaurant = Restaurant.find params[:restaurant_id]
   end
 
   def create
-    review = Review.create review_params
-    redirect_to reviews_path
+    review = Review.new review_params
+
+    review.user = @current_user
+    restaurant = Restaurant.find params[:restaurant_id]
+    review.restaurant_id = restaurant.id
+    # raise 'hell'
+    if review.save
+      redirect_to restaurant_path( params[:restaurant_id] )
+    else
+      flash[:error] = "Error creating review. Try again."
+      flash[:error_messages] = review.errors.full_messages
+    end
+      # raise 'hell'
   end
 
   # Read
   def index
     @reviews = Review.all
+    # raise 'hell'
   end
 
   def show
@@ -47,7 +60,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :body, :rating, :user_id, :restaurant_id )
+    params.require(:review).permit(:title, :body, :rating )
 
   end
 
