@@ -47,12 +47,16 @@ class ImagesController < ApplicationController
 
   #Update/Edit/Patch
   def edit
-    @image = Image.find params[:id]
     @restaurant = Restaurant.find params[:restaurant_id]
+    @image = Image.find params[:id]
+    
   end
 
   def update
     image = Image.find params[:id]
+    restaurant = Restaurant.find params[:restaurant_id]
+    image.user = @current_user
+
     image.update image_params
 
     # if params[:file].present?

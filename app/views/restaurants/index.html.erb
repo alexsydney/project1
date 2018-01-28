@@ -16,8 +16,9 @@
          <%#= link_to restaurant.url_website, restaurant_path(restaurant.id) %>
       </em>
       , <%= restaurant.address%>
-      , <%= restaurant.location%> <br>
-      average rating: <div class="rating" data-rateyo-rating="<%= restaurant.reviews.sum(:rating)/restaurant.reviews.length %>"></div>
+      , <%= restaurant.location%>
+      average rating: <div class="rating" data-rateyo-rating="<%= (restaurant.reviews.sum(:rating)).to_f / restaurant.reviews.length %>"></div>
+
     </li>
 
   <% end %>

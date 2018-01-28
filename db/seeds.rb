@@ -39,17 +39,6 @@ r9 = Restaurant.create name: 'Hard Rock', address: '10 Darling Dr, Sydney NSW 20
 
 r10 = Restaurant.create name: 'Munich Brauhaus', address: '33 Playfair St, Sydney, NSW 2000',location: 'Sydney', url_website: 'http://www.munichbrauhaus.com/', user: u1
 
-r11 = Restaurant.create name: '678 Sydney – Korean BBQ Restaurant', address: '396 Pitt corner Goulburn Street, Sydney, NSW 2000',location: 'Sydey', url_website: 'http://www.678kbbq.com/', user: u4
-
-r12 = Restaurant.create name: 'Hubert', address: '15 BLIGH STREET, SYDNEY ',location: 'Sydney', url_website: 'http://restauranthubert.com/', user: u1
- 2000
-
-r13 = Restaurant.create name: 'Ester Restaurant and Bar', address: '52 meagher st chippendale, NSW 2008',location: 'Sydney', url_website: 'http://www.ester-restaurant.com.au/', user: u1
-
-r14 = Restaurant.create name: 'Momofuku Seiobo', address: '80 Pyrmont St, Pyrmont NSW 2009',location: 'Sydney', url_website: 'http://rakudining.com.au/', user: u1
-
-r15 = Restaurant.create name: 'Saint Peter', address: '362 Oxford St, Paddington NSW 2021', location: 'Sydney', url_website: 'http://www.saintpeter.com.au/', user: u1
-
 puts "create #{Restaurant.all.length} restaurants "
 
 #### Image ##################
@@ -69,21 +58,21 @@ i6 = Image.create title: 'RACK OF PORK RIBS', description: 'Served with skinny f
 
 i7 = Image.create title: 'GAMBERI LINGUINI', description: 'not yet', image_url: 'https://cdn.ricettedigusto.info/2015/06/linguine-ai-gamberi.jpg', user: u1 ,restaurant: r3
 
-i8 = Image.create title: 'Dry aged grass fed beef rib', description: 'Dry aged grass fed beef rib', image_url: 'http://bentlyranch.com/images/beef_3.jpg', user: u1 ,restaurant: r12
+i8 = Image.create title: 'Dry aged grass fed beef rib', description: 'Dry aged grass fed beef rib', image_url: 'http://bentlyranch.com/images/beef_3.jpg', user: u1 ,restaurant: r10
 
-i9 = Image.create title: 'Nama Kaki', description: 'Nama kaki (fresh raw oyster) very good the size was big too', image_url: 'http://cdnkualalumpur.intercontinental.com/uploads/promotion/_billboard_superwide_2016/nama-kaki-2014-large.jpg', user: u1, restaurant: r15
+i9 = Image.create title: 'Nama Kaki', description: 'Nama kaki (fresh raw oyster) very good the size was big too', image_url: 'http://cdnkualalumpur.intercontinental.com/uploads/promotion/_billboard_superwide_2016/nama-kaki-2014-large.jpg', user: u1, restaurant: r9
 
-i10 = Image.create title: 'Gyuu Tataki', description: 'Seared 150-day angus beef strip-loin w black truffle dressing, 19.0 pickled onion & garlic chips', image_url: 'https://a8g4i9g5y.ssl.hwcdn.net/files/styles/hd_two_row_landscape/public/image/d4/f7/70784-gyuu-tataki.jpg', user: u1 ,restaurant: r14
+i10 = Image.create title: 'Gyuu Tataki', description: 'Seared 150-day angus beef strip-loin w black truffle dressing, 19.0 pickled onion & garlic chips', image_url: 'https://a8g4i9g5y.ssl.hwcdn.net/files/styles/hd_two_row_landscape/public/image/d4/f7/70784-gyuu-tataki.jpg', user: u1 ,restaurant: r8
 
-i11 = Image.create title: 'Ebi Tempura', description: 'Crispy Western Australian prawn, tenkatsu, chilli mayonnaise, cucumber, avocado', image_url: 'http://www.manilafoodandtravel.com/wp-content/uploads/2010/09/EbiTempuraTeishoku3.gif', user: u3 ,restaurant: r13
+i11 = Image.create title: 'Ebi Tempura', description: 'Crispy Western Australian prawn, tenkatsu, chilli mayonnaise, cucumber, avocado', image_url: 'http://www.manilafoodandtravel.com/wp-content/uploads/2010/09/EbiTempuraTeishoku3.gif', user: u3 ,restaurant: r7
 
-i12 = Image.create title: 'Steamed Abalone with Dried Orange Peel', description: 'Steamed Abalone with Dried Orange Peel', image_url: 'https://farm8.staticflickr.com/7429/13951832719_39c7d28423.jpg', user: u4 ,restaurant: r11
+i12 = Image.create title: 'Steamed Abalone with Dried Orange Peel', description: 'Steamed Abalone with Dried Orange Peel', image_url: 'https://farm8.staticflickr.com/7429/13951832719_39c7d28423.jpg', user: u4 ,restaurant: r10
 
 i13 = Image.create title: 'Gold Moon Stir Fried Seafood Combination', description: 'Gold Moon Stir Fried Seafood Combination', image_url: 'http://farm8.staticflickr.com/7002/6676268075_9f59055481_z.jpg', user: u3 ,restaurant: r10
 
-i14 = Image.create title: 'Salt And Pepper Squid', description: 'Salt And Pepper Squid', image_url: 'http://d3lp4xedbqa8a5.cloudfront.net/s3/digital-cougar-assets/food/2015/05/05/99794fc6-ffff-46bf-a0dd-a24b0091788a/salt-and-pepper-squid-with-cucumber-salad.jpg', user: u2, restaurant: r14
+i14 = Image.create title: 'Salt And Pepper Squid', description: 'Salt And Pepper Squid', image_url: 'http://d3lp4xedbqa8a5.cloudfront.net/s3/digital-cougar-assets/food/2015/05/05/99794fc6-ffff-46bf-a0dd-a24b0091788a/salt-and-pepper-squid-with-cucumber-salad.jpg', user: u2, restaurant: r9
 
-i15 = Image.create title: 'Pinnacle Mb2+ Porterhouse 250gram with beef bone just, bone marrow butter, and onion rings ', description: 'Pinnacle Mb2+ Porterhouse 250gram with beef bone just, bone marrow butter, and onion rings ', image_url: 'https://www.reluctantgourmet.com/wp-content/uploads/2012/09/fbce18293084d3ac0d97e393ad7b6ff7.jpg', user: u1 ,restaurant: r13
+i15 = Image.create title: 'Pinnacle Mb2+ Porterhouse 250gram with beef bone just, bone marrow butter, and onion rings ', description: 'Pinnacle Mb2+ Porterhouse 250gram with beef bone just, bone marrow butter, and onion rings ', image_url: 'https://www.reluctantgourmet.com/wp-content/uploads/2012/09/fbce18293084d3ac0d97e393ad7b6ff7.jpg', user: u1 ,restaurant: r9
 
 puts "create #{Image.all.length} images "
 
@@ -100,7 +89,7 @@ re4 = Review.create title: 'Name and location', body: 'A restaurant situated in 
 
 re5 = Review.create title: ' Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 1.5, user: u5 , restaurant: r5
 
-re6 = Review.create title: 'Name and location', body: 'A restaurant situated in the heart of a small village between three national forests and close to the horse´s capital city, Chantilly. It is the favourite hangout place for people from the polo, horse races, and golf world', rating: 4.5, user:u1 , restaurant:r1
+re6 = Review.create title: 'Name and location', body: 'A restaurant situated in the heart of a small village between three national forests and close to the horse´s capital city, Chantilly. It is the favourite hangout place for people from the polo, horse races, and golf world', rating: 4.5, user: u1 , restaurant:r1
 
 re7 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 4, user: u1 , restaurant: r2
 
@@ -186,6 +175,126 @@ re46 = Review.create title: 'The service, waiters and owner', body: 'What a pity
 
 re47 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
 
+re48 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r7
+
+re49 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r7
+
+re50 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r7
+
+re51 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r8
+
+re52 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r8
+
+re53 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r8
+
+re54 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r8
+
+re55 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r9
+
+re56 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r9
+
+re57 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r9
+
+re58 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r9
+
+re59 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r9
+
+re60 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r10
+
+re61 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r10
+
+re62 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: re10
+
+# re63 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r10
+#
+# re64 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r10
+#
+# re65 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r10
+#
+# re66 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r10
+#
+# re67 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r10
+#
+# re68 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r10
+#
+# re69 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r10
+#
+# re70 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r8
+#
+# re71 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r7
+#
+# re72 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r6
+#
+# re73 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r6
+#
+# re74 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re75 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re76 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r4
+#
+# re77 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r4
+#
+# re78 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r4
+#
+# re79 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re80 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re81 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re82 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re83 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+#
+# re84 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re85 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re86 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re87 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re88 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re89 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re90 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re91 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re92 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re93 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re94 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re95 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re96 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re97 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re98 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re99 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re100 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re101 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re102 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re103 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
+#
+# re104 = Review.create title: 'Menu and dishes', body: 'The menu offers a wide variety of mouth-watering starters. I had the white asparagus accompanied by a mousseline sauce and poached eggs, while my friend tried the zucchini carpaccio served with sundries tomatoes and a mozzarella strudel. They were exquisite. The main course consisted in a risotto with scallop cooked in cream and a cassolette of coley with mussels, which really thrilled us. It all was followed by a delicious apple pie served with a scoop of vanilla ice cream for dessert.', rating: 5, user: u1 , restaurant: r5
+#
+# re105 = Review.create title: 'The ingredients, wine and prices', body: 'All the products were fresh and the dishes had the warmth of home-made food. The chefs takes great care in selecting the best quality ingredients. The restaurant also caters for all tastes by providing a large selection of the best wines of the region, which are pricy but worth sampling.', rating: 4.5, user: u1 , restaurant: r5
+#
+# re106 = Review.create title: 'The service, waiters and owner', body: 'What a pity that the service does not accompany the high quality of the cooking. You can hardly get a smile out of the waitresses. Thankfully the owner and hostess, a middle-aged charming woman, is always around willing to exchange some kind words with all her clients.',rating: 4.5, user: u1 , restaurant: r5
+#
+# re107 = Review.create title: 'Recommendation', body: 'Despite the high price of the food and the not so attentive waiters´ service, I had a pleasant dining experience with food of the most exquisite flavours. For this reason I highly recommend going to this restaurant.',rating: 5, user: u1 , restaurant: r5
 
 puts "create #{Review.all.length} reviews "
 
@@ -194,7 +303,7 @@ Comment.destroy_all
 
 c1 = Comment.create body: 'We had lunch here a few times while on the island visiting family and friends. The servers here are just wonderful and have great memories it seems. We sat on the ocean front patio and enjoyed the view with our delicious wine and lunch. Must try!', user: u1, review: re1
 
-c2 = Comment.create body:'Hello. Please give our thanks to the Manager(s) and others for the wonderful room and bottle of sparkling wine for our Anniversary stay. We had an amazing time. The room was so comfortable, the food at Echo absolutely spectacular (we ate two meals there). Our waitress was just wonderful. Looking forward to staying with you in the future. What a great place!', user: u1,review:re2
+c2 = Comment.create body:'Hello. Please give our thanks to the Manager(s) and others for the wonderful room and bottle of sparkling wine for our Anniversary stay. We had an amazing time. The room was so comfortable, the food at Echo absolutely spectacular (we ate two meals there). Our waitress was just wonderful. Looking forward to staying with you in the future. What a great place!', user: u1, review: re2
 
 c3 = Comment.create body: 'Spent 3 nights at this resort earlier this month and it was a great stay! We paid for an upgrade to the oceanfront cabana, which was worth the price. The beach views, calm ocean and ability to watch the sunset on our patio were highlights of the trip! The hotel restaurant was exceptional, not only because every meal we enjoyed had a variety of options and was flavorful but also because the prices were so reasonable for an oceanfront resort! The entire island and resort were a lot more laid back and calm than other touristy coastal front towns in the southeast, but that may in part due to it being early March. I imagine there a bit more traffic during high seasons, but either way, we will definitely be back! Highly recommended!', user: u1 , review: re3
 

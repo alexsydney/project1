@@ -44,11 +44,10 @@
 
 <hr>
 <%= link_to 'Add Photo', new_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
-<%= link_to 'Edit Photo', new_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Edit Photo', edit_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
 <%= link_to 'Add Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
-<%#= link_to 'Reviews', restaurant_reviews_path(@restaurant), class:"btn btn-primary" %>
-
-<%#= link_to 'Comments', restaurant_review_comments_path(@restaurant, @review), class:"btn btn-primary" %>
+<%= link_to 'Edit Review', edit_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Delete Review', edit_restaurant_review_path(@restaurant), method: :delete, class:"btn btn-primary" %>
 <hr>
 <h4>Review:</h4>
 <hr>
@@ -64,6 +63,8 @@
        <hr>
     <% end %>
     <%= link_to "Add Comment", new_restaurant_review_comment_path(@restaurant, review), class:"btn btn-primary" %>
+    <%= link_to "Edit Comment", new_restaurant_review_comment_path(@restaurant, review), class:"btn btn-primary" %>
+    <%= link_to "Delete Comment", restaurant_review_comment_path(@restaurant, review), method: :delete, class:"btn btn-primary" %>
     <hr>
     <script type="text/javascript">
     $("#rateyo-<%= review.id %>").rateYo({
