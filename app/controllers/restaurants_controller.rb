@@ -41,6 +41,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    # raise 'hell'
      @restaurant = Restaurant.find params[:id]
      # raise 'hell'
      country = 'AU'

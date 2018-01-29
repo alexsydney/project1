@@ -36,6 +36,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+    # raise 'hell'
     @comment = Comment.find params[:id]
 
     redirect_to comment_path
@@ -43,22 +44,40 @@ class CommentsController < ApplicationController
 
   # Update/edit
   def edit
-     @comment = Comment.find params[:id]
 
+
+    @comment = Comment.find params[:id]
+    @restaurant.review = Review.find params[:id]
+    @restaurant = Restaurant.find params[:restaurant_id]
   end
 
   def update
-    comment = Comment.find params[:id]
-    comment.update comment_path
 
-    redirect_to comment_path
+    comment = Comment.find params[:id]
+    comment.update comment_params
+
+    redirect_to restaurant_path(comment.review.restaurant)
+
   end
 
   # delete
   def destroy
-    Comment.destroy params[:id]
 
-    redirect_to comments_path
+    # restaurant = Restaurant.find params[:id]
+    comment = Comment.find params[:id]
+    # review=   Review.find params[:id]
+    #
+    # redirect_to restaurant_path(review.restaurant)
+
+    # @restaurant = params[:restaurant_id]
+    # @review = params[:review_id]
+    # @comment = params[:id]
+
+    Comment.destroy params[:id]
+    redirect_to restaurant_path(comment.review.restaurant)
+    # redirect_to restaurant_path
+    # redirect_to comments_path
+
   end
 
   private

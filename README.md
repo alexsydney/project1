@@ -51,7 +51,7 @@ As Everyone's trying to do something to make themselves look better.
 [Restaurant Review App - ClickMe to read UserStory](https://trello.com/b/9eUKdeqU/restaurant-review-app)
 
 ## Model - Database
-![alt-text-1](erd/Restautant Review Database Model EDR.png "Restautant Review Database Model")
+![alt-text-1](erd/Restautant Review Database Model EDR.png "Restaurant Review Database Model")
 
 ## Wireframes
 [Restaurant Review ](http://127.0.0.1:32767/start.html#p=home&g=1)

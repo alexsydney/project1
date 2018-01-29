@@ -39,19 +39,23 @@ class ReviewsController < ApplicationController
   # Edit/Update
   def edit
     @review = Review.find params[:id]
+    @restaurant = Restaurant.find params[:restaurant_id]
   end
 
   def update
     review = Review.find params[:id]
     review.update review_params
 
-    redirect_to review_path
+    redirect_to restaurant_path(review.restaurant)
   end
 
   #
   def destroy
+    review = Review.find params[:id]
     Review.destroy params[:id]
-    redirect_to reviews_path
+    redirect_to restaurant_path(review.restaurant)
+
+
 
 
   end

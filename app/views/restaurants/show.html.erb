@@ -39,32 +39,36 @@
 <br>
 <p><strong>Check out restaurant near by:</strong> </p>
  <% @near_by.each do |nearby| %>
-  <a href="<%= nearby.url_website %> "><%= nearby.name  %></a> , <%= nearby.address %>  <br>
+   <%= link_to nearby.name, restaurant_path( nearby ) %><br>
 <% end  %>
 
 <hr>
 <%= link_to 'Add Photo', new_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
-<%= link_to 'Edit Photo', edit_restaurant_image_path(@restaurant), class:"btn btn-primary" %>
+
 <%= link_to 'Add Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
-<%= link_to 'Edit Review', edit_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
-<%= link_to 'Delete Review', edit_restaurant_review_path(@restaurant), method: :delete, class:"btn btn-primary" %>
 <hr>
 <h4>Review:</h4>
 <hr>
 <%  @restaurant.reviews.each do |review| %>
-     <strong><%= review.title %></strong><br>
+     <%= link_to 'Edit Review', edit_restaurant_review_path(@restaurant, review.id), class:"btn btn-primary" %>
+     <%= link_to 'Delete Review', restaurant_review_path(@restaurant, review), method: :delete, class:"btn btn-primary" %>
+     <br>
+     <strong>Title:</strong> <%= review.title %><br>
+
     <%= review.body %> <div id="rateyo-<%= review.id %>"></div>Review by: <%= review.user.nickname%> <br>
     <hr>
     <h4>Comments</h4>
+    <%= link_to "Add Comment", new_restaurant_review_comment_path(@restaurant, review), class:"btn btn-primary" %>
     <hr>
     <% review.comments.each do |comment| %>
        From: <%= comment.user.nickname %><br>
-       <%= simple_format(comment.body) %>
+       <%= simple_format(comment.body) %><br>
+       <%= link_to "Edit Comment", edit_restaurant_review_comment_path(@restaurant, review, comment), class:"btn btn-primary" %>
+       <%= link_to "Delete Comment", restaurant_review_comment_path(@restaurant, review, comment), method: :delete, class:"btn btn-primary" %>
        <hr>
     <% end %>
-    <%= link_to "Add Comment", new_restaurant_review_comment_path(@restaurant, review), class:"btn btn-primary" %>
-    <%= link_to "Edit Comment", new_restaurant_review_comment_path(@restaurant, review), class:"btn btn-primary" %>
-    <%= link_to "Delete Comment", restaurant_review_comment_path(@restaurant, review), method: :delete, class:"btn btn-primary" %>
+
+
     <hr>
     <script type="text/javascript">
     $("#rateyo-<%= review.id %>").rateYo({
@@ -82,6 +86,7 @@
 <%  @restaurant.images.each do |image| %>
      <%= cl_image_tag image.image_url %><br><br>
      <%#= f.cl_image_upload :image %>
+     <%= link_to 'Edit Photo', edit_restaurant_image_path(@restaurant, image), class:"btn btn-primary" %><br>
 <% end %>
 
 <script>
