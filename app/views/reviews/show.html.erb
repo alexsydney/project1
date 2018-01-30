@@ -2,9 +2,9 @@
   <a href="<%= @review.restaurant.url_website %>"><%=  @review.restaurant.name %></a> </em> </h4>
 
 <%= link_to 'Edit', edit_restaurant_review_path(@review.restaurant, @review.id), class:"btn btn-primary" %>
-|
+
 <%= link_to 'Delete', restaurant_review_path(@review.restaurant), method: :delete, class:"btn btn-primary" %>
-|
+
 <%= link_to 'Back', "/reviews", class:"btn btn-primary" %>
 
 <p>Title: <%= @review.title %></p>

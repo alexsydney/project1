@@ -47,7 +47,7 @@ class CommentsController < ApplicationController
 
 
     @comment = Comment.find params[:id]
-    @restaurant.review = Review.find params[:id]
+    @review = Review.find params[:review_id]
     @restaurant = Restaurant.find params[:restaurant_id]
   end
 

@@ -1,13 +1,14 @@
 <h4> <em><%= @user.nickname %> </em> </h4>
-
-<%= link_to 'Edit', "/users/#{@user.id}/edit" %>
-|
+<hr>
+<%#= link_to 'Edit', "/users/#{@user.id}/edit" , class:"btn btn-primary" %>
+<%= link_to 'Edit', edit_user_path , class:"btn btn-primary" %>
+<%#= link_to 'Add Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
 <%#= link_to 'Delete', user_path, method: :delete %>
-|
-<%= link_to 'Back', "/users" %>
-
-<p>Email: <%= @user.email %></p>
-<p>Location: <%= @user.location %></p>
-<%= @user.nickname %>
+<%= link_to 'Back', root_path , class:"btn btn-primary" %>
+<%#= link_to 'Back', "/users" %>
+<%#= link_to 'Back', "/reviews", class:"btn btn-primary" %>
+<hr>
+<p><strong>Email:</strong>  <%= @user.email %><br>
+<strong> Nickname:</strong><%= @user.nickname %></p>
 <br>
 <%#= cl_image_tag @user.image %>
