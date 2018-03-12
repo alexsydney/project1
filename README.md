@@ -40,6 +40,7 @@ This app is something like social media sites where a customer can share their e
 ![alt-text-1](erd/Restaurant Review App Database Model - ERD.png "Restaurant Review Database Model")
 
 ## Wireframes
+<a target="_blank" href="https://1zs2wj.axshare.com">Restaurant Review App - Wireframes</a>
 [Restaurant Review App - Wireframes ](https://1zs2wj.axshare.com)
 
 ## Libraries
