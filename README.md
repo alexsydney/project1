@@ -37,14 +37,9 @@ This app is something like social media sites where a customer can share their e
 [Restaurant Review App -  UserStory](https://trello.com/b/9eUKdeqU/restaurant-review-app)
 
 ## Model - Database
-![Restaurant Review Model](/erd/Restaurant Review App Database Model - ERD.png)
-
-<p></p>
-
 ![alt-text-1](erd/Restaurant Review App Database Model - ERD.png "Restaurant Review Database Model")
 
 ## Wireframes
-<a target="_blank" href="https://1zs2wj.axshare.com">Restaurant Review App - Wireframes</a>
 [Restaurant Review App - Wireframes ](https://1zs2wj.axshare.com)
 
 ## Libraries
