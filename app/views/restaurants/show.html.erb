@@ -5,6 +5,7 @@
       }
 </style> -->
 <hr>
+<%= link_to 'Add', new_restaurant_path(@restaurant), class:"btn btn-primary" %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class:"btn btn-primary" %>
 <%= link_to 'Delete', restaurant_path, method: :delete, class:"btn btn-primary" %>
 <%= link_to 'Back', "/restaurants", class:"btn btn-primary" %>

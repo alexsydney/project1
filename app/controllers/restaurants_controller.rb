@@ -33,7 +33,7 @@ class RestaurantsController < ApplicationController
   end
 
   def search
-    @results = Restaurant.where('location LIKE ?', "%#{params[:query]}%")
+    @results = Restaurant.where('location ILIKE ?', "%#{params[:query]}%")
     # raise 'hell'
    # @results = Restaurant.where('name LIKE ?', "%#{params[:query]}%")
 

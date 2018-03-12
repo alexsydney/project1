@@ -2,15 +2,15 @@
 
 ### User
 User.destroy_all
-u1 = User.create nickname: 'Mule Skinner', email: 'alexpham@gmail.com', location: 'Sydney', password: 'chicken', is_admin: true, image: 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2012/10/Food.jpg'
+u1 = User.create nickname: 'Mule Skinner', email: 'test1@gmail.com', location: 'Sydney', password: 'chicken', is_admin: true, image: 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2012/10/Food.jpg'
 
-u2 = User.create nickname: 'Turnip King', email: 't1@gmail.com', location: 'Sydney ', password: 'chicken', is_admin: false, image: 'http://www.thegoodshoppingguide.com/wp-content/uploads/2013/03/pasta.jpg'
+u2 = User.create nickname: 'Turnip King', email: 'test2@gmail.com', location: 'Sydney ', password: 'chicken', is_admin: false, image: 'http://www.thegoodshoppingguide.com/wp-content/uploads/2013/03/pasta.jpg'
 
-u3 = User.create nickname: 'Grave Digger', email: 't2@gmail.com', location: 'North Sydney', password: 'chicken', is_admin: false, image: 'http://www.petacarige.com.au/wp-content/uploads/2014/11/salmon-dish-food-meal-46239.jpeg'
+u3 = User.create nickname: 'Grave Digger', email: 'test3@gmail.com', location: 'North Sydney', password: 'chicken', is_admin: false, image: 'http://www.petacarige.com.au/wp-content/uploads/2014/11/salmon-dish-food-meal-46239.jpeg'
 
-u4 = User.create nickname: 'High Kingdom Warrior', email: 't3@gmail.com', location: 'Canberra', password: 'chicken', is_admin: false, image: 'https://static.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg'
+u4 = User.create nickname: 'High Kingdom Warrior', email: 'test4@gmail.com', location: 'Canberra', password: 'chicken', is_admin: false, image: 'https://static.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg'
 
-u5 = User.create nickname: 'Highlander Monk', email: 't4@gmail.com', location: 'Bondi', password: 'chicken',is_admin: false, image: 'http://bramblebaybowlsclub.com.au/wp-content/uploads/2014/11/chinese_2.jpg'
+u5 = User.create nickname: 'Highlander Monk', email: 'test5@gmail.com', location: 'Bondi', password: 'chicken',is_admin: false, image: 'http://bramblebaybowlsclub.com.au/wp-content/uploads/2014/11/chinese_2.jpg'
 
 puts "create #{User.all.length} users "
 
